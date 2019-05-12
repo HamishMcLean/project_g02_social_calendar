@@ -26,10 +26,21 @@ public class UserController {
 		return userService.findAll();
 	}
 	
-	@GetMapping("name/{name}")
-	public User findByName(@PathVariable String name) {
-		return userService.findByName(name);
+	@GetMapping("username/{username}")
+	public User findByUserName(@PathVariable String username) {
+		return userService.findByUserName(username);
 	}
+	
+	@GetMapping("id/{id}")
+	public User findById(@PathVariable int id) {
+		return userService.findById(id);
+	}
+	
+	@GetMapping("name/{firstname}")
+	public User findByFname(@PathVariable String firstname) {
+		return userService.findByFname(firstname);
+	}
+	
 	
 	@PostMapping()
 	public User save (@RequestBody User u) {

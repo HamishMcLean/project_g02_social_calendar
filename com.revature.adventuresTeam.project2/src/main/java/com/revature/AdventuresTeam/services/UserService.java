@@ -19,15 +19,36 @@ public class UserService {
 		return userRepo.findAll();
 	}
 	
-	public User findByName(String name) {
+	public User findByUserName(String username) {
 
-		List<User> userList = userRepo.findUsingNameHQL(name);
+		List<User> userList = userRepo.findUsingNameHQL(username);
 		if(userList.size() == 0 )
 		{
 			return null;
 		}
 		return userList.get(0);
 	}
+	
+	public User findById(int id) {
+
+		List<User> idList = userRepo.findUsingIdHQL(id);
+		if(idList.size() == 0 )
+		{
+			return null;
+		}
+		return idList.get(0);
+	}
+	
+	public User findByFname(String firstname) {
+
+		List<User> fnList = userRepo.findFnameHQL(firstname);
+		if(fnList.size() == 0 )
+		{
+			return null;
+		}
+		return fnList.get(0);
+	}
+	
 	
 	public User save (User u) {
 		return userRepo.save(u);

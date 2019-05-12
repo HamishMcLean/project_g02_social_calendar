@@ -17,7 +17,13 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 	//The follwoing is Autoprovision
 	//List<User> findByName(String name);
 	// an alternate version using hql
-	@Query("FROM User user WHERE user.name = :name")
-	List<User> findUsingNameHQL(String name);
-
+	@Query("FROM User user WHERE user.username = :username")
+	List<User> findUsingNameHQL(String username);
+	
+	@Query("FROM User user WHERE user.id = :id")
+	List<User> findUsingIdHQL(int id);
+	
+	@Query("FROM User user WHERE user.firstname = :firstname")
+	List<User> findFnameHQL(String firstname);
+	
 }
