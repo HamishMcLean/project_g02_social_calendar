@@ -15,7 +15,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 //	private String name;
-	private String username;
+	private String username; // we forgot to add @column
 	private String firstname;
 	private String lastname;
 	private String password;
@@ -65,50 +65,41 @@ public class User {
 		this.password = password;
 		this.email = email;
 	}
-	public int getId() {
+	public int getid() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setid(int id) {
 		this.id = id;
 	}
-	public String getName() {
+	public String getusername() {
 		return username;
 	}
-	public void setName(String username) {
+	public void setusername(String username) {
 		this.username = username;
 	}
-	
-	public String getFirstName() {
+	public String getfirstname() {
 		return firstname;
 	}
-	
-	public void setFirstName(String firstname) {
+	public void setfirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	
-	public String getLastName() {
+	public String getlastname() {
 		return lastname;
 	}
-	
-	public void setLastName(String lastname) {
+	public void setlastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
-	public String getPassword() {
+	public String getpassword() {
 		return password;
 	}
-	
-	public void setPassword(String password) {
+	public void setpassword(String password) {
 		this.password = password;
 	}
-
-	public String getEmail() {
+	public String getemail() {
 		return email;
 	}
-	
-	public void setEmail(String email) {
+	public void setemail(String email) {
 		this.email = email;
 	}
-
-
+	
 }
